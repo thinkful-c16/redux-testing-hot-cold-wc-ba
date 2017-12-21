@@ -9,7 +9,7 @@ describe('reducer', () => {
             guesses: [],
             feedback: 'Make your guess!',
             auralStatus: '',
-            correctAnswer: 7 
+            correctAnswer: expect.any(Number) 
         });
     });
 
@@ -27,14 +27,14 @@ describe('restartGame', () => {
             guesses: [4, 5, 6],
             feedback: 'Make another guess!',
             auralStatus: 'blah blah blah',
-            correctAnswer: 12
+            correctAnswer: Math.floor(Math.random() * 100) + 1
         };
         const newState = reducer(state, restartGame(7));
         expect(newState).toEqual({
             guesses: [],
             feedback: 'Make your guess!',
             auralStatus: '',
-            correctAnswer: 7 
+            correctAnswer: expect.any(Number) 
         });
     });
 });

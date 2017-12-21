@@ -4,7 +4,7 @@ const initialState = {
     guesses: [],
     feedback: 'Make your guess!',
     auralStatus: '',
-    correctAnswer: 7
+    correctAnswer: Math.floor(Math.random() * 100) + 1
 };
 
 export const reducer = (state = initialState, action) => {
